@@ -33,7 +33,7 @@ Installation
 Make sure you have Python 3.8+ installed. Then run:
 
 # Clone this repo
-git clone https://github.com/yourusername/ocr-pan-aadhar-extractor.git
+git clone https://github.com/KaustubhK03/OCR.git
 cd ocr-pan-aadhar-extractor
 
 # Create and activate a virtual environment
