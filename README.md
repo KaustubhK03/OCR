@@ -1,46 +1,55 @@
-OCR-Based Document Identifier Extractor
+# 🧾 OCR-Based Document Identifier Extractor
 
 This project is an Automated Document Analyzer that processes PDF and image files to extract PAN and Aadhaar card numbers using pytesseract and easyocr. It involves multiple stages: converting PDFs to images, cropping relevant sections, text extraction, and re-processing failed cases.
 
-Folder Structure
+## 📁 Folder Structure
 
 project-root/
 │
-├── PDFs/                   # Input PDFs
-├── PDF_Images/            # Temporary folder for images extracted from PDFs
-├── Images/                # Cropped and cleaned images for text extraction
-├── Retry/                 # Failed images to be retried using easyOCR
-├── main.py                # Main OCR pipeline script
+├── PDFs/               # Input PDFs
+├── PDF_Images/         # Images extracted from PDFs
+├── Images/             # Cropped images for OCR
+├── Retry/              # Images for retrying OCR
+├── main.py             # Main pipeline script
 
-Features
-	•	Extracts text from both images and PDF files.
-	•	Recognizes PAN and Aadhaar numbers using regex patterns.
-	•	Improves OCR quality with image pre-processing (grayscale, blur, adaptive thresholding).
-	•	Retry mechanism using EasyOCR for failed images.
-	•	Returns structured dictionary output.
+---
 
- Technologies Used
-	•	pytesseract – Tesseract OCR wrapper for Python
-	•	easyocr – Deep learning-based OCR
-	•	OpenCV – Image preprocessing and manipulation
-	•	fitz (PyMuPDF) – PDF page/image extraction
-	•	ftfy – Fixes text encoding issues
-	•	PIL – Image enhancement
-	•	tqdm – Progress bars
+## 🚀 Features
 
-Installation
+- ✅ Extracts text from both **images and PDFs**
+- 🔍 Detects **PAN** and **Aadhaar** numbers using **regex**
+- 🧹 Uses **grayscale**, **blur**, and **adaptive thresholding** for image preprocessing
+- 🔁 **Retry mechanism** using `easyocr` for failed OCR attempts
+- 📊 Outputs a structured **dictionary** mapping filenames to extracted IDs
 
-Make sure you have Python 3.8+ installed. Then run:
+---
 
-# Clone this repo
+## 🛠️ Technologies Used
+
+- `pytesseract` – Python wrapper for Tesseract OCR
+- `easyocr` – Deep learning-based OCR
+- `opencv-python` – Image processing
+- `fitz` (`PyMuPDF`) – PDF parsing and image extraction
+- `ftfy` – Fixes text encoding issues
+- `Pillow` – Image enhancement
+- `tqdm` – CLI progress bars
+
+---
+
+## 📦 Installation
+
+Make sure Python **3.8+** is installed.
+
+```bash
+# Clone this repository
 git clone https://github.com/KaustubhK03/OCR.git
-cd ocr-pan-aadhar-extractor
+cd OCR
 
 # Create and activate a virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+source venv/bin/activate  # Windows: venv\Scripts\activate
 
-# Install required dependencies
+# Install dependencies
 pip install -r requirements.txt
 
 Required packages (requirements.txt):
